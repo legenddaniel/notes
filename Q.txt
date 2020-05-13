@@ -1,0 +1,354 @@
+Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 ID 并将其用于其他设备来下载配置
+
+Ubuntu
+
+IIS服务器
+
+Powershell git
+
+vscode技巧
+
+移动端开发注意物理像素比
+
+button 和 input 区别
+
+property和attribute区别
+
+document和window区别
+
+js加载，js引入
+
+为什么需要getter setter
+
+断点调试，chrome debugger
+
+callback → promise → async/await
+
+rAF
+
+前端代码规范
+
+模块化vs组件化
+
+框架的真正优势
+
+编程思想
+
+readme
+
+为何只操作栈内存不操作堆内存
+
+use strict
+
+vscode插件
+
+babel/polyfill
+
+eslint
+
+Symbol
+
+四舍五入精度问题
+
+有thisArg参数的方法，如foreach map filter等
+
+虚拟dom
+
+data-*用法
+
+真正实现私有变量/属性
+
+new 操作符
+
+------------------------------------------------------------------
+
+考虑用sass/less重写
+
+缺陷：chrome内核缩放50%以下样式变乱，nav边框不对齐
+
+-------------------------- general ------------------------------
+
+Pure function = same input same output + no side effects
+
+---------------------------- html -------------------------------
+
+js 添加的是行内样式
+
+用<strong>和<em>而不是<b>和<i>
+
+nav指有导航性质的div，不一定只是顶部导航栏
+为了实现多级导航，一般nav嵌套ul和li
+
+a href="mailto:zuosiyuan001@gmail.com"
+a href="tel:+13439884310"
+a href="sms:+13439884310"
+
+aira和role
+
+css内的资源路径相对css，js内的资源路径相对html
+
+----------------------------- css --------------------------------
+
+媒体查询和需要相对父元素调整字体用em，其他时候用rem？
+
+nth-child，nth-of-type从1开始，其余从0开始，包括$.eq和:eq
+
+布局 位置 大小边框 内容 其他
+
+一般先设置body内外边距为0
+
+给元素设置背景色查看display类型
+三种元素显示可变，根据是否同行显示和调整大小设置display
+
+flex和inline-flex区别在于容器是block还是inline，内容都为flex，block和inline-block同理
+可以说flex/block是block-flex/block-block的简写，格式为：容器-内容
+inline不能设置宽高和垂直方向padding和margin，不能用translate
+
+width: fit-content实现和inline相同效果
+
+float影响的是后面和父元素的布局
+float元素具有inline-block性质，float元素之间没有空隙
+float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
+flex会使float相关属性失效
+
+relative指与自身原本（文档流中）位置的相对
+absolute指相对最近的有定位祖先元素的绝对，flex对absolute元素无效
+一般开发：子绝父相
+如果子绝祖相，子元素会随着父元素移动而移动
+sticky指初始为absolute滚动到屏幕一端就变为fixed，非兄弟元素后边的sticky会顶掉前边的，兄弟元素会覆盖前边的
+
+父：align-items针对单行，align-content针对多行；子：align-self
+flex子项占父项比
+
+z-index需要定位
+
+盒子内部：content（padding border @border-box）
+盒子外部：margin（padding border @content-box）
+border-box好在设置padding和border不影响layout
+
+border占据空间，outline不占据，并且在内容之上
+
+定位的子元素在父元素中心：top50%, left50%, translate(-50%,-50%)
+
+子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
+
+伪元素是元素的子盒子，有行内元素的属性，比如没有宽高
+
+悬停a时对b操作：a:hover b{} 或 a:hover + b{}
+
+/*\
+|   |    居中详情看收藏的css-trick文章
+\*/
+
+如果用rem，全局字体用%设置
+
+图片底边框空白：vertical-align：非baseline；flex下无效
+
+list项目符号可用背景图片设置
+
+white-space: pre和<pre>一样
+
+animation: steps() 实现帧动画
+
+多个transition用逗号隔开：width .5s, height .5s
+
+对于transform，我们看到的是投影，基于这个事实理解translateZ和perspective对视觉效果的影响
+因为看到的是投影，所以需要一个荧幕，也就是在父级设置perspective和*-origin的原因，父级充当荧幕
+
+父元素perspective使子元素animation/transform有立体感过程感
+父元素transform-style: preserve-3d使子元素参与3d转换
+translateZ移动图像，perspective移动观察者
+
+3D转换最好绕中心点旋转
+
+----------------------------- sass ------------------------------
+
+list index从1开始，-1表示倒数第一
+
+path是相对css的，console可显示绝对路径
+
+没有变量就@extend placeholder，有就@include mixin
+@extend像prototype，@include像constructor
+
+-------------------------- bootstrap ---------------------------
+
+data-parent是被折叠内容共同的父元素
+
+data-target不应用链接样式，必须用href
+
+a class="btn" 效果等于 button class="btn-link"
+
+modal中插入的popover如果有按钮用a class="btn"？
+
+-------------------------- javascript ----------------------------
+
+undefined: 值未定义，undefined类型
+null：值被定义为null，null类型
+访问primitives会创建临时包装对象，除了undefined和null，为primitives添加属性方法等同于为临时包装对象添加，但之后会销毁
+因此，primitives不是对象
+
+清空数组arr.length = 0
+
+in查找对象和原型属性，hasownproperty只查找对象本身属性
+
+for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
+
+for...in遍历keys，for...of遍历values，for...in可遍历对象
+for...in遍历对象后Int类型变量名会被重排，其他类型保持原顺序
+
+三元运算符只建议用于赋值，因为可读性差，而且不能用break/continue
+
+逻辑运算符运算式先将值转化为boolean，计算后再转化为原来的值返回
+
+字符串转数字最好方式：+' '
+非Number运算，除了加号剩下会先将运算符两边的值转换成Number
+' ' = 0, [ ] = 0, null = 0, '\n\t\s' = 0，true = 1, [1] = 1, 
+'0x11' = 17, '-INFINITY' = -Infinity, '123e-1' = 12.3
+NaN：'[ ]'，'[1]'，[1, 2]，{ }，'true'，undefined	
+NaN !== NaN，Object.is(NaN, NaN) === true
+
+除Boolean('') === false其余字符串都为true包括'0'
+
+逻辑运算符本质就是短路运算，即使是在if中，即使条件有多个
+与：try返回第一个假，catch返回最后一个，或：try返回第一个真，catch返回最后一个
+优先级非与或
+
+i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
+
+"key" in { }也可以检查继承的属性，不加引号的key表示属性赋值的变量，类似Object[key]引用变量
+
+函数/var变量声明会提升，由于表达式在运行时赋值，所以function a()比var a = function()更早声明并可用
+
+js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
+mutation：pass by reference
+assignment：pass by value
+question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定义不统一
+
+浅拷贝：复制一层/拷贝栈？
+	基本：赋值
+	数组：slice，concat，[...]
+	对象：Object.assign，{...}	assign不能拷贝继承属性和不可枚举属性
+深拷贝：复制所有/拷贝堆栈？
+	基本：N/A
+	引用：JSON.parse(JSON.stringify)（function无效），循环，递归
+
+Array.sort()返回排序后的原数组
+
+javascript中object和namespace可以认为是一回事
+
+Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
+
+构造函数new Object过程：创建空对象this，函数执行，返回this
+
+变化的变量值：函数返回，固定的变量值：直接赋值
+
+const声明变量的标识符identifier不可修改，但是对象or数组虽然不能重新赋值，但可通过__proto__的方法修改键&值
+
+return空值终止函数，类似循环中break
+
+es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
+
+模板字符串支持换行输出，类似pre效果
+
+赋值直接=（赋值指的是赋给变量value而不是创建变量）
+解构赋值 let [a, b, c] = [1, 2, 3]
+
+X在Object[X]中指具体value，Array[X]中指顺序
+换句话说，access Object 中的value需要具体的值或变量名，access Array 中的value可用序号
+
+闭包：将变量作用域从函数提高到全局，避免垃圾回收，this指向window
+有内存泄漏风险，只有当需要累积变量值才用
+
+惰性函数：通过函数内重写函数达到一次判断永久生效
+立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
+
+call、apply、bind：通过改变this指向以在其他作用域正确调用函数/方法
+call：立刻调用，分开传参，参数是单独个体时适用
+apply：立刻调用，数组传参，参数本身是数组时适用
+bind：分开调用，分开传参，返回一个函数名不带括号，如果需要更新this可另起一变量
+
+/*\
+|   |    js中的class本质是constructor，本质的本质是对象
+|   |    constructor存放不同属性/方法；prototype/__proto__存放相同方法
+|   |    函数对象有prototype，所有对象有__proto__，__proto__指向创建对象的构造函数的prototype
+|   |    Object和Function的prototype里集成了所有JS自带API
+|   |    属性写在constructor里，不需要（直接）调用constructor参数的方法写在prototype里
+\*/
+
+若通过es5方式覆写prototype需要注意constructor的指向
+箭头函数不能作为constructor，也没有prototype，也不能作为generator
+子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
+constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
+若constructor和prototype里有相同属性方法，则优先调用constructor里的
+
+GC回收
+
+尽量避免try catch，尤其是异步？
+
+先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
+
+resolve等于then的参数，reject等于catch的参数？
+Promise的错误会冒泡/传递
+相同Promise分别添加多个then不会覆盖，类似addEventlistener
+
+-------------------------- DOM API ----------------------------
+/ 0 \
+| 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集合的length
+| 能 |  减少http请求
+| 优 |  减少
+| 化 |
+\ 0 /
+
+document.documentElement === html，计算总体尺寸属性时用这个
+
+Element.client*：当前可见content + padding，包括伪元素（注意没有自身宽高的也没有client*比如行内元素，伪元素），ie6+
+Element.scroll*：总content + padding，包括伪元素，若不可/无需滚动则等于ELement.client*，ie8+（ie5-7有问题）
+HTMLElement.offset*：总content +padding + border + 滚动条，不包括伪元素，d-none元素值为0，ie8+，实验性最好不用
+
+document.documentElement.client*：当前视窗
+document.documentElement.offset*/scroll*：全部内容
+window.inner*：当前视窗+滚动条，ie9+
+window.outer*：当前浏览器窗口，ie9+
+
+htmlcollection获取reference，都是live（实时更新）的，querySelectorAll获取value
+querySelector系列和getElementsByName返回nodelist，其余getElement系列返回htmlcollection
+获取元素用getElement，修改元素用querySelector？
+与arguments一样，htmlcollection和nodelist都是类数组对象（instanceof Object：true, instanceof Array：false）
+
+this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
+诸如setTimeout等异步方法this指向window
+
+冒泡：自身→祖先
+捕获：祖先→自身
+如果需要给多个元素绑定相同事件可利用冒泡原理给父元素设置事件委托，其他时候可stopPropagation()阻止冒泡
+
+return false在直接绑定事件（element.onclick, etc.）时 === preventDefault + stopPropagation，在addEventListener里无效
+
+setInterval时间间隔为10毫秒以上的定值
+setTimeout执行父函数可实现动态时间间隔，可替代setInterval
+
+onscroll：鼠标/触摸板/键盘滚动距离>0触发
+onwheel：鼠标/触摸板发出滚动动作触发
+
+onresize在resize之后触发，onscroll同理
+orientationchange会触发scroll（和resize？）
+
+DOMContentLoaded：html加载完成
+load：除脚本外其他加载完成
+
+rAF(fn) === setTimeout(fn, 1000/fps)
+
+--------------------------- jQuery ------------------------------
+
+$(document).ready() / $() = window.DOMContentLoaded
+
+toggle()中事件触发者和作用者最好不要是一个？
+
+typeof ?.val() === 'string'
+
+eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()，他们都从0开始
+
+对html固有属性操作用prop，自定义属性用attr，prop无法操作自定义属性（如data-*），但attr可以操作固有属性
+selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defaultSelected用prop()
+对checkbox，select， readonly等状态元素用prop可返回boolean更方便
+移除html固有属性可用prop/attr('？', false)或removeattr，禁用removeprop因为会使固有属性永久不可用
