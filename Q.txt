@@ -187,6 +187,23 @@ null：值被定义为null，null类型
 访问primitives会创建临时包装对象，除了undefined和null，为primitives添加属性方法等同于为临时包装对象添加，但之后会销毁
 因此，primitives不是对象
 
+所有类型都被hoist，但是只有var和function没有TDZ问题（ES5前的旧特性）
+hoisting时，function declaration在前，var declaration在后
+
+ES6的新特性如default parameters，class也存在TDZ，表现类似于他们是用let声明的
+
+switch不创造新的作用域（没有{ }）
+var x = x + 1 === NaN，let x = x + 1 === error，不会沿着scope chain查找x
+
+var a = 1; === var a; a = 1;
+let a = 1; !== let a; a = 1;
+var声明变量没有块级作用域只有函数作用域，只要不在函数内（如for loop）皆为global，let const声明的变量可以被块 { } 隔离作用域
+let const不能声明同一作用域内的已声明变量，同一作用域内的已声明变量也不能被let const声明
+函数a调用外部函数b，b内变量的作用域还是b，不能调用a内变量
+
+arguments可被更改，但不应被更改
+function.length === parameters.length !== arguments.length
+
 清空数组arr.length = 0
 
 in查找对象和原型属性，hasownproperty只查找对象本身属性
@@ -216,8 +233,6 @@ NaN !== NaN，Object.is(NaN, NaN) === true
 i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
 "key" in { }也可以检查继承的属性，不加引号的key表示属性赋值的变量，类似Object[key]引用变量
-
-函数/var变量声明会提升，由于表达式在运行时赋值，所以function a()比var a = function()更早声明并可用
 
 js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
 mutation：pass by reference
@@ -250,6 +265,9 @@ es5参数是以（伪）数组arguments形式传递进function，arguments是局
 
 模板字符串支持换行输出，类似pre效果
 
+rest parameter不包括在Function.length内，空rest parameters输出[ ]
+等号左边rest，等号右边spread
+
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
 解构赋值 let [a, b, c] = [1, 2, 3]
 
@@ -281,7 +299,7 @@ bind：分开调用，分开传参，返回一个函数名不带括号，如果�
 constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
 若constructor和prototype里有相同属性方法，则优先调用constructor里的
 
-GC回收
+GC回收一般都为Mark-and-sweep algorithm标记清除
 
 尽量避免try catch，尤其是异步？
 
