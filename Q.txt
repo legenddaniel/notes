@@ -198,6 +198,7 @@ var x = x + 1 === NaN，let x = x + 1 === error，不会沿着scope chain查找x
 var a = 1; === var a; a = 1;
 let a = 1; !== let a; a = 1;
 var声明变量没有块级作用域只有函数作用域，只要不在函数内（如for loop）皆为global，let const声明的变量可以被块 { } 隔离作用域
+let const class不属于global properties （let a = 1; window.a === undefined）
 let const不能声明同一作用域内的已声明变量，同一作用域内的已声明变量也不能被let const声明
 函数a调用外部函数b，b内变量的作用域还是b，不能调用a内变量
 
@@ -269,7 +270,7 @@ rest parameter不包括在Function.length内，空rest parameters输出[ ]
 等号左边rest，等号右边spread
 
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
-解构赋值 let [a, b, c] = [1, 2, 3]
+解构赋值 let [ , b, c] = [1, 2, 3]，只能解构iterable（array，string）
 
 X在Object[X]中指具体value，Array[X]中指顺序
 换句话说，access Object 中的value需要具体的值或变量名，access Array 中的value可用序号
@@ -293,13 +294,15 @@ bind：分开调用，分开传参，返回一个函数名不带括号，如果�
 |   |    属性写在constructor里，不需要（直接）调用constructor参数的方法写在prototype里
 \*/
 
+class内部不能声明变量，constructor内可以
+
 若通过es5方式覆写prototype需要注意constructor的指向
 箭头函数不能作为constructor，也没有prototype，也不能作为generator
 子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
 constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
 若constructor和prototype里有相同属性方法，则优先调用constructor里的
 
-GC回收一般都为Mark-and-sweep algorithm标记清除
+GC回收一般都为Mark-and-sweep algorithm标记清除，核心思想是判断reachability
 
 尽量避免try catch，尤其是异步？
 
