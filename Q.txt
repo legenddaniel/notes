@@ -281,13 +281,16 @@ javascript中object和namespace可以认为是一回事
 
 Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
 
+stringify可显示[object Object]
+
 构造函数new Object过程：创建空对象this，函数执行，返回this
+new出来的永远是对象，只有对象才可以是instance
 
 变化的变量值：函数返回，固定的变量值：直接赋值
 
 const声明变量的标识符identifier不可修改，但是对象or数组虽然不能重新赋值，但可通过__proto__的方法修改键&值
 
-return空值终止函数，类似循环中break
+如果返回值在第二行要在return后加（），否则返回undefined
 
 es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
 
