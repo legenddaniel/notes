@@ -258,6 +258,8 @@ NaN !== NaN，Object.is(NaN, NaN) === true
 与：try返回第一个假，catch返回最后一个，或：try返回第一个真，catch返回最后一个
 优先级非与或
 
+var z = 1, y = z = typeof y; // y = 'undefined', z = 'undefined', 结合律从右至左
+
 i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
 "key" in { }也可以检查继承的属性，不加引号的key表示属性赋值的变量，类似Object[key]引用变量
