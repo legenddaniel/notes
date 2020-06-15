@@ -42,10 +42,6 @@ use strict
 
 vscode插件
 
-babel/polyfill
-
-eslint
-
 Symbol
 
 四舍五入精度问题
@@ -59,12 +55,6 @@ data-*用法
 真正实现私有变量/属性
 
 new 操作符
-
-------------------------------------------------------------------
-
-考虑用sass/less重写
-
-缺陷：chrome内核缩放50%以下样式变乱，nav边框不对齐
 
 -------------------------- general ------------------------------
 
@@ -403,3 +393,10 @@ eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()，他们都从
 selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defaultSelected用prop()
 对checkbox，select， readonly等状态元素用prop可返回boolean更方便
 移除html固有属性可用prop/attr('？', false)或removeattr，禁用removeprop因为会使固有属性永久不可用
+
+---------------------------- React ------------------------------
+
+stateless functional component用function和props，有状态功能组件用class和this.props
+无状态性能更好，尽量用无状态
+
+用this.setState()修改状态
