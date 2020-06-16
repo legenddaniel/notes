@@ -400,3 +400,6 @@ stateless functional component用function和props，有状态功能组件用clas
 无状态性能更好，尽量用无状态
 
 用this.setState()修改状态
+
+componentWillMount()已经deprecated
+componentDidMount()添加事件监听
