@@ -58,7 +58,7 @@ new 操作符
 
 -------------------------- general ------------------------------
 
-Pure function = same input same output + no side effects
+Pure function = same input same output + no side effects （没有Math.random()等）
 
 ---------------------------- html -------------------------------
 
@@ -403,3 +403,7 @@ stateless functional component用function和props，有状态功能组件用clas
 
 componentWillMount()已经deprecated
 componentDidMount()添加事件监听
+
+---------------------------- Redux ------------------------------
+
+reducer检索action.type处理state
