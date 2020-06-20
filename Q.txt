@@ -315,7 +315,7 @@ class内部不能声明变量，constructor内可以
 static methods中this指向当前class
 
 若通过es5方式覆写prototype需要注意constructor的指向
-箭头函数不能作为constructor，也没有prototype，也不能作为generator
+箭头函数不能作为constructor（因为没有this），也没有prototype，也不能作为generator
 子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
 constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
 若constructor和prototype里有相同属性方法，则优先调用constructor里的
@@ -407,3 +407,5 @@ componentDidMount()添加事件监听
 ---------------------------- Redux ------------------------------
 
 reducer检索action.type处理state
+
+创建action => 创建reducer => 创建store
