@@ -320,6 +320,8 @@ static methods中this指向当前class
 constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
 若constructor和prototype里有相同属性方法，则优先调用constructor里的
 
+static方法在同class的其他static中直接用this调用，在prototype里用this.constructor调用
+
 GC回收一般都为Mark-and-sweep algorithm标记清除，核心思想是判断reachability
 
 尽量避免try catch，尤其是异步？
