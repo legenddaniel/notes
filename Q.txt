@@ -332,6 +332,10 @@ resolve等于then的参数，reject等于catch的参数？
 Promise的错误会冒泡/传递
 相同Promise分别添加多个then不会覆盖，类似addEventlistener
 
+异步function永远返回Promise，只能在后续某个then/await中处理数据
+async function === 返回Promise的方程
+const a = await b(), a === b方程返回值，类似于await解析了Promise并返回本应只能在Promise中操作的值
+
 -------------------------- DOM API ----------------------------
 / 0 \
 | 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集合的length
@@ -401,7 +405,7 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 stateless functional component用function和props，有状态功能组件用class和this.props
 无状态性能更好，尽量用无状态
 
-用this.setState()修改状态
+props只读，可通过修改state传值给props
 
 componentWillMount()已经deprecated
 componentDidMount()添加事件监听
