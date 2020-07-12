@@ -143,6 +143,8 @@ list项目符号可用背景图片设置
 
 white-space: pre和<pre>一样
 
+动画性能：只改变transform和opacity，visibility控制显隐，使用will-change
+
 animation: steps() 实现帧动画
 
 多个transition用逗号隔开：width .5s, height .5s
@@ -404,6 +406,8 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 
 stateless functional component用function和props，有状态功能组件用class和this.props
 无状态性能更好，尽量用无状态
+
+callback需要bind(this)
 
 props只读，可通过修改state传值给props
 
