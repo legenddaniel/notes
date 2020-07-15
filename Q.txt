@@ -4,13 +4,9 @@ Ubuntu
 
 IIS服务器
 
-Powershell git
+git
 
 vscode技巧
-
-移动端开发注意物理像素比
-
-button 和 input 区别
 
 property和attribute区别
 
@@ -24,29 +20,19 @@ js加载，js引入
 
 callback → promise → async/await
 
-rAF
-
 前端代码规范
-
-模块化vs组件化
 
 框架的真正优势
 
 编程思想
 
-readme
-
 为何只操作栈内存不操作堆内存
-
-use strict
 
 vscode插件
 
 Symbol
 
 四舍五入精度问题
-
-有thisArg参数的方法，如foreach map filter等
 
 虚拟dom
 
@@ -55,6 +41,8 @@ data-*用法
 真正实现私有变量/属性
 
 new 操作符
+
+名词：agile development，CI/CD，SDLC
 
 -------------------------- general ------------------------------
 
@@ -228,10 +216,11 @@ arguments.length就是实参个数，与是否真正起作用无关
 
 in查找对象和原型属性，hasownproperty只查找对象本身属性
 
-for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
+for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归/尾递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
 for...in遍历对象后Int类型变量名会被重排，其他类型保持原顺序
+for...in遍历自身+继承属性，Object.keys遍历自身属性
 
 三元运算符只建议用于赋值，因为可读性差，而且不能用break/continue
 
