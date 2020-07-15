@@ -42,7 +42,7 @@ data-*用法
 
 new 操作符
 
-名词：agile development，CI/CD，SDLC
+名词：agile development，CI/CD，SDLC，REST，MVC/MVVM
 
 -------------------------- general ------------------------------
 
