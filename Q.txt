@@ -318,6 +318,7 @@ GC回收一般都为Mark-and-sweep algorithm标记清除，核心思想是判断
 尽量避免try catch，尤其是异步？
 
 先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
+Promise内代码是同步的，then内是异步的
 
 resolve等于then的参数，reject等于catch的参数？
 Promise的错误会冒泡/传递
@@ -395,6 +396,10 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 
 stateless functional component用function和props，有状态功能组件用class和this.props
 无状态性能更好，尽量用无状态
+
+通过state控制input value叫controlled component，dom自身控制叫uncontrolled
+
+setState是async的，event handler内的其他同步操作会先于setState
 
 callback需要bind(this)
 
