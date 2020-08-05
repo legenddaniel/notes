@@ -405,8 +405,9 @@ callback需要bind(this)
 
 props只读，可通过修改state传值给props
 
-componentWillMount()已经deprecated
 componentDidMount()添加事件监听
+
+开发模式下，跨域通过package.json添加proxy实现，或者node+express添加proxy
 
 ---------------------------- Redux ------------------------------
 
