@@ -407,6 +407,8 @@ props只读，可通过修改state传值给props
 
 componentDidMount()添加事件监听
 
+useRef可用来存储PrevProps/PrevState
+
 开发模式下，跨域通过package.json添加proxy实现，或者node+express添加proxy
 
 ---------------------------- Redux ------------------------------
