@@ -115,6 +115,9 @@ border占据空间，outline不占据，并且在内容之上
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
+display:none，visibility:hidden，opacity:0，宽高0不可读屏，元素移除屏幕外可读屏
+不要设置font-size和line-height为0，会被标记malicious极大影响SEO
+
 伪元素是元素的子盒子，有行内元素的属性，比如没有宽高
 
 悬停a时对b操作：a:hover b{} 或 a:hover + b{}
@@ -394,9 +397,6 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 
 ---------------------------- React ------------------------------
 
-stateless functional component用function和props，有状态功能组件用class和this.props
-无状态性能更好，尽量用无状态
-
 通过state控制input value叫controlled component，dom自身控制叫uncontrolled
 
 setState是async的，event handler内的其他同步操作会先于setState
@@ -407,6 +407,8 @@ props只读，可通过修改state传值给props
 
 componentDidMount()添加事件监听
 
+没有Provider时使用context默认值
+
 useRef可用来存储PrevProps/PrevState
 
 开发模式下，跨域通过package.json添加proxy实现，或者node+express添加proxy
@@ -416,3 +418,7 @@ useRef可用来存储PrevProps/PrevState
 reducer检索action.type处理state
 
 创建action => 创建reducer => 创建store
+
+-------------------------- Mongoose ---------------------------
+
+mongoose.Types.ObjectId(id) to cast id string in `aggregation`
