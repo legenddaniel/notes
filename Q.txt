@@ -48,7 +48,7 @@ Pure function = same input same output + no side effects （没有Math.random()�
 
 ---------------------------- html -------------------------------
 
-js 添加的是行内样式
+js 添加的是行内样式 
 
 用<strong>和<em>而不是<b>和<i>
 
@@ -392,6 +392,7 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 通过state控制input value叫controlled component，dom自身控制叫uncontrolled
 
 setState是async的，event handler内的其他同步操作会先于setState
+所以如果setState中需要state或props需要代入参数中
 
 callback需要bind(this)
 
