@@ -325,6 +325,10 @@ Promise的错误会冒泡/传递
 async function === 返回Promise的方程
 const a = await b(), a === b方程返回值，类似于await解析了Promise并返回本应只能在Promise中操作的值
 
+----------------------------- PHP ------------------------------
+
+变量名case-sensitive，其余case-insensitive
+
 -------------------------- DOM API ----------------------------
 / 0 \
 | 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集   | 能 |  合的length
