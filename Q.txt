@@ -329,6 +329,36 @@ const a = await b(), a === b方程返回值，类似于await解析了Promise并�
 
 变量名case-sensitive，其余case-insensitive
 
+Data types: string, integer, float, boolean, array, object, NULL, resource
+
+php associative array ≈ javascript object
+php indexed array ≈ javascript array
+php object ≈ javascript instance
+
+php: list($a, , $c) = array("dog", "cat", "mouse")
+js: var [a, , c] = ['dog', 'cat', 'mouse']
+
+associative array用sort会丢失key（重置为0123...）
+
+双引号≈模板字符串，单引号≈普通字符串，注意（\'）或（\"）的转义和换行的情况
+$my_str = 'Worl';
+echo 'Hello\t$my_strd! I\'ll be back<br>';      // Hello\t$my_strd! I'll be back
+echo "Hello\t$my_strd! I\'ll be back<br>";      // Hello	! I\'ll be back
+echo 
+"Hello\t{$my_str}d! I\'ll be back<br>"; 	       // Hello	World! I\'ll be back
+
+符号比较运算符 > 赋值 > 字母比较运算符 '&&' > '=' > 'and'
+
+php: $name = $_GET['name'] ?? 'anonymous'
+js: var name = name && 'anonymous'
+
+php: foreach($arr as $val), foreach($arr as $key => $val)
+js: for (let val of arr)
+
+php没有作用域链，global $var可在函数内部使用全局变量
+
+优先使用file_get_contents/file_put_contents，而不是fopen+fread/fwrite+fclose
+
 -------------------------- DOM API ----------------------------
 / 0 \
 | 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集   | 能 |  合的length
