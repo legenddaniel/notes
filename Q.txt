@@ -59,9 +59,13 @@ a href="mailto:zuosiyuan001@gmail.com"
 a href="tel:+13439884310"
 a href="sms:+13439884310"
 
-aira和role
+aria和role
 
 css内的资源路径相对css，js内的资源路径相对html（不是import）
+
+<label>的for指向input的id
+后端用name作为标识符
+<form>在post文件时enctype=“multipart/form-data”
 
 ----------------------------- css --------------------------------
 
@@ -329,11 +333,19 @@ const a = await b(), a === b方程返回值，类似于await解析了Promise并�
 
 变量名case-sensitive，其余case-insensitive
 
-Data types: string, integer, float, boolean, array, object, NULL, resource
+Data types: string, integer, float, boolean, array, object, null, resource
 
 php associative array ≈ javascript object
 php indexed array ≈ javascript array
 php object ≈ javascript instance
+
+this指instance/object，self指class
+
+访问：
+数组：array[0] (indexed), array["name"] (associative)
+this/object：this->name, object->name
+self：self::$name 
+class：MyClass::$name (static)
 
 php: list($a, , $c) = array("dog", "cat", "mouse")
 js: var [a, , c] = ['dog', 'cat', 'mouse']
@@ -354,6 +366,10 @@ js: var name = name && 'anonymous'
 
 php: foreach($arr as $val), foreach($arr as $key => $val)
 js: for (let val of arr)
+
+php: json_encode(), json_decode()
+js: JSON.stringify(), JSON.parse()
+json_decode()默认返回object，第二参数为true返回asscociative arr
 
 php没有作用域链，global $var可在函数内部使用全局变量
 
