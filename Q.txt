@@ -48,6 +48,8 @@ Pure function = same input same output + no side effects （没有Math.random()�
 
 前后端都要验证
 
+严禁在前端操作private api，必须经由后端的.env读取api key
+
 ---------------------------- html -------------------------------
 
 js 添加的是行内样式 
