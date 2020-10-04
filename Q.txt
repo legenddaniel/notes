@@ -65,7 +65,7 @@ css内的资源路径相对css，js内的资源路径相对html（不是import�
 
 <label>的for指向input的id
 后端用name作为标识符
-<form>在post文件时enctype=“multipart/form-data”
+<form>在post文件时enctype="multipart/form-data”
 
 ----------------------------- css --------------------------------
 
@@ -374,6 +374,20 @@ json_decode()默认返回object，第二参数为true返回asscociative arr
 php没有作用域链，global $var可在函数内部使用全局变量
 
 优先使用file_get_contents/file_put_contents，而不是fopen+fread/fwrite+fclose
+
+------------------------- Wordpress ---------------------------
+
+一般需要loop应用code到每个post
+
+Theme: 
+index.php：主界面
+style.css：主css，固定的header
+single.php：模板post，若不存在则用index.php
+page.php：模板page，若不存在则用index.php
+header.php/footer.php：模板header/footer，若不存在则用系统自带，一般需要wp_head()和wp_footer(),并且开始和结束html和body标签
+
+the_***()可echo在dashboard定义的当前title，content等
+get_the_***($post)可return在dashboard定义的任意title，content等
 
 -------------------------- DOM API ----------------------------
 / 0 \
