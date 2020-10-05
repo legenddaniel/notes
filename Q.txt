@@ -341,11 +341,14 @@ const a = await b(), a === b方程返回值，类似于await解析了Promise并�
 
 Data types: string, integer, float, boolean, array, object, null, resource
 
-php associative array ≈ javascript object
+php associative array ≈ javascript map
 php indexed array ≈ javascript array
 php object ≈ javascript instance
 
-this指instance/object，self指class
+php self::$*** ≈ javascript this.***
+php $this->*** ≈ javascript this.prototype.***
+
+new时候运行__construct()
 
 访问：
 数组：array[0] (indexed), array["name"] (associative)
@@ -393,6 +396,8 @@ action修改功能，filter修改数据
 需要权限检查，前后端验证
 
 一般需要loop应用code到每个post
+
+<?php // Silence is golden的index.php用来防止用户浏览directory，比如/wp-content
 
 Theme: 
 index.php：主界面
