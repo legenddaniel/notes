@@ -399,6 +399,9 @@ action修改功能，filter修改数据
 
 <?php // Silence is golden的index.php用来防止用户浏览directory，比如/wp-content
 
+php自带魔术常量如__DIR__末尾不带/，wordpress的plugin_dir_*末尾带/
+wordpress中建议用plugin_dir_path(__FILE__)引入php，plugin_dir_url(__FILE__)加载assets
+
 Theme: 
 index.php：主界面
 style.css：主css，固定的header
