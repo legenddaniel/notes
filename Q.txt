@@ -414,6 +414,8 @@ get_the_***($post)可return在dashboard定义的任意title，content等
 
 Woocommerce Product是一种post
 
+is_user_logged_in()过早调用会报错，在init action里调用
+
 -------------------------- DOM API ----------------------------
 / 0 \
 | 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集   | 能 |  合的length
