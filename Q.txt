@@ -208,7 +208,7 @@ let const不能声明同一作用域内的已声明变量，同一作用域内�
 函数a调用外部函数b，b内变量的作用域还是b，不能调用a内变量
 
 javascript使用词法作用域lexical scope，声明时已确定作用域，沿作用域链查找变量
-但eval和非箭头函数this类似dynamic scope机制
+但非箭头函数的this类似dynamic scope机制，当调用this所在函数才会赋值this，比如对象方法作为event handler，this变成了事件绑定者
 var obj = {
     a() {
         console.log(this);
@@ -224,7 +224,9 @@ arguments.length就是实参个数，与是否真正起作用无关
 
 清空数组arr.length = 0
 
-in查找对象和原型属性，hasownproperty只查找对象本身属性
+in/for...in查找对象和原型属性，hasownproperty只查找对象本身属性
+hasownproperty是js中唯一不查找prototype的处理属性的函数
+推荐总是使用hasownproperty
 
 for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归/尾递归
 
