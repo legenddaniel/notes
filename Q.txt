@@ -171,6 +171,8 @@ modal中插入的popover如果有按钮用a class="btn"？
 http: unsecured, port 80, runs at application layer
 https: secured (requires SSL certificate & domain validation, encrypted data), runs at transport layer
 
+http各方法没有本质区别，更多是为了语义化以及符合REST，POST可实现所有功能
+
 img, link, script标签可自动跨域
 跨域请求正常发出，只是response被拦截了
 目前主要跨域方式是cors和nginx reverse proxy
