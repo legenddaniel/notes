@@ -508,3 +508,15 @@ reducer检索action.type处理state
 -------------------------- Mongoose ---------------------------
 
 mongoose.Types.ObjectId(id) to cast id string in `aggregation`
+
+---------------------------- MySQL -----------------------------
+
+SQL执行顺序：
+5. SELECT 
+6. DISTINCT column, AGG_FUNC(column_or_expression), …
+1. FROM mytable JOIN another_table ON mytable.column = another_table.column
+2. WHERE constraint_expression
+3. GROUP BY column
+4. HAVING constraint_expression
+7. ORDER BY column ASC/DESC
+8. LIMIT count OFFSET COUNT;
