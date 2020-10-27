@@ -44,6 +44,8 @@ new 操作符
 
 -------------------------- general ------------------------------
 
+Performance: global var > DOM attr > Local/Session Storage > Ajax
+
 Pure function = same input same output + no side effects （没有Math.random()等）
 
 前后端都要验证
