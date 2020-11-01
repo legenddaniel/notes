@@ -46,7 +46,7 @@ new 操作符
 
 Pure function = same input same output + no side effects （没有Math.random()等）
 
-前后端都要验证
+前后端都要验证，以及sanitize输入，escape输出
 
 严禁在前端操作private api，必须经由后端的.env读取api key
 
