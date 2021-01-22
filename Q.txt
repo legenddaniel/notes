@@ -177,7 +177,7 @@ https: secured (requires SSL certificate & domain validation, encrypted data), r
 
 http各方法没有本质区别，更多是为了语义化以及符合REST，POST可实现所有功能
 
-img, link, script标签可自动跨域
+img, link, script, audio, video标签可自动跨域，并有crossorigin属性
 跨域请求正常发出，只是response被拦截了
 目前主要跨域方式是cors和nginx reverse proxy
 开发模式下，跨域通过package.json添加proxy实现，或者node+express添加proxy
@@ -497,9 +497,9 @@ selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defau
 setState是async的，event handler内的其他同步操作会先于setState
 所以如果setState中需要state或props需要代入参数中
 
-callback需要bind(this)
+React事件不能通过return false来prevent default
 
-props只读，可通过修改state传值给props
+在类组件中，若不用bind可用{()=>this.handleClick()}，但这样每次组件渲染都会创建一个handleClick，从而触发子组件的rerender
 
 没有Provider时使用context默认值
 
