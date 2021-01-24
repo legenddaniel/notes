@@ -42,6 +42,8 @@ data-*用法
 
 new 操作符
 
+HOC vs render props
+
 名词：agile development，CI/CD，SDLC，REST，MVC/MVVM
 
 -------------------------- general ------------------------------
