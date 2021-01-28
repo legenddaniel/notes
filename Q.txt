@@ -505,6 +505,9 @@ React事件不能通过return false来prevent default
 
 没有Provider时使用context默认值
 
+useEffect如果需要dependency，一定要把所有useEffect内部的props和states和相关derivatives加上
+因此只用在useEffect里的function建议定义在useEffect内，因为容易查看dependency
+
 useRef可用来存储PrevProps/PrevState
 
 ---------------------------- Redux ------------------------------
