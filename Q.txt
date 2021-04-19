@@ -507,6 +507,7 @@ React事件不能通过return false来prevent default
 
 useEffect如果需要dependency，一定要把所有useEffect内部的props和states和相关derivatives加上
 因此只用在useEffect里的function建议定义在useEffect内，因为容易查看dependency
+useLayoutEffect === componentDidMount（avoid flickering），但建议尽量用useEffect
 
 useRef可用来存储PrevProps/PrevState
 
