@@ -17,8 +17,7 @@
 # sudo aws s3 cp s3://gli-init-scripts/postgresql-42.2.12.jar /usr/lib/spark/jars/
 
 # Install Golang
-apt-get update
-sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz
+sudo yum install golang -y
 go version
 echo "$GOPATH"
 # Clone repos. We need all those server side repos. Now use the modified branch. (Ignore this now)
