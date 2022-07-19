@@ -1,5 +1,7 @@
 Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 ID 并将其用于其他设备来下载配置
 
+s3://us-east-1.elasticmapreduce/libs/script-runner/script-runner.jar
+
 Ubuntu
 
 自动根据Doc生成文档？
