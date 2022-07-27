@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Siyuan: This script processes monthly data in a setup purpose. After maintenance period we need another cron job to do this. 
 base="2022/05/"
 olddate=""
 
@@ -28,8 +29,8 @@ do
     fi
 
     # Run data processing
-    (cd ~/data-processing/xmode-import/service/dev && make run CONFIG=canada-test)
-    (cd ~/data-processing/visits-processing/service/dev && make run CONFIG=canada-test)
+    (cd ~/data-processing/xmode-import/service/dev && sudo make run CONFIG=canada-test)
+    (cd ~/data-processing/visits-processing/service/dev && sudo make run CONFIG=canada-test)
 
     # Prepare for next day
     olddate=$date
