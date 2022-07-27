@@ -45,5 +45,7 @@ cd ../data-processing/visits-processing/service/dev
 sudo make migrate
 
 # Start xmode data processing
-cd ../../../xmode-import/service/dev
-sudo make run
+# cd ../../../xmode-import/service/dev
+# sudo make run
+# cd /emr/instance-controller/lib/bootstrap-actions/1/app/data-processing/xmode-import/service/dev
+# sudo make run
