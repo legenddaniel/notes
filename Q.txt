@@ -2,6 +2,18 @@ Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 
 
 s3://us-east-1.elasticmapreduce/libs/script-runner/script-runner.jar
 
+sudo aws s3 cp s3://canada-xmode/run.sh run.sh
+
+scp -i ~/.ssh/gli-prod.pem run-test ec2-user@3.96.159.110:~/run-test
+scp -i ~/.ssh/gli-prod.pem run-test-pickwell ec2-user@35.182.224.232:~/run-test-pickwell
+scp -i ~/.ssh/gli-prod.pem run-prod ec2-user@15.222.251.35:~/run-prod
+scp -i ~/.ssh/gli-prod.pem run-prod-pickwell ec2-user@15.223.68.96:~/run-prod-pickwell
+scp -i ~/.ssh/gli-prod.pem go1.17.5.linux-amd64.tar.gz ec2-user@35.182.247.239:~/go1.17.5.linux-amd64.tar.gz
+sed -i -e 's/\r$//' run-test
+sed -i -e 's/\r$//' run-test-pickwell
+sed -i -e 's/\r$//' run-prod
+sed -i -e 's/\r$//' run-prod-pickwell
+
 Ubuntu
 
 自动根据Doc生成文档？

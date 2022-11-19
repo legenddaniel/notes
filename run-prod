@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Siyuan: This script processes monthly data in a setup purpose. After maintenance period we need another cron job to do this. 
+# Also make sure that the dates are all May 1st inside files
 base="2022/05/"
 olddate=""
 
@@ -23,14 +24,14 @@ do
         today="time.May, $i"
         
         # Update the dates in files
-        sed -i -e "s|$olddate|$date|g" ~/config/configs/canada-test/config.go
+        sed -i -e "s|$olddate|$date|g" ~/config/configs/gli-prod/config.go
         sed -i -e "s|$olddate|$date|g" ~/data-processing/xmode-import/service/src/main.go
         sed -i -e "s|$yesterday|$today|g" ~/data-processing/visits-processing/service/src/main.go
     fi
 
     # Run data processing
-    (cd ~/data-processing/xmode-import/service/dev && sudo make run CONFIG=canada-test)
-    (cd ~/data-processing/visits-processing/service/dev && sudo make run CONFIG=canada-test)
+    cd ~/data-processing/xmode-import/service/dev && sudo make run CONFIG=gli-prod
+    cd ~/data-processing/visits-processing/service/dev && sudo make run CONFIG=gli-prod
 
     # Prepare for next day
     olddate=$date
